@@ -8,6 +8,7 @@
 */
 class game{
 public:
+// declare vars 
 	int OrthoWid;
 	int OrthoHei;
 	int WinWid;
@@ -28,6 +29,7 @@ public:
 	float BallSpeedX;
 	float PSpeedY;
 	game(){
+		// init vars
 		WinWid = 700;
 		WinHei = 700;
 		OrthoWid = 700;
@@ -48,6 +50,7 @@ public:
 		BallSpeedX = 0.5;
 		PSpeedY = 1;
 	}
+	// init some sitting methods 
 	void start_settings();
 	void win();
 	void KeyControl();
@@ -67,6 +70,7 @@ void reflection();
 void draw();
 }ball;
 
+// reflector Or inverse direction     
 class reflector{
 public: 
 	float x,y;
@@ -85,15 +89,16 @@ public:
 	void care();
 }left,right;
 
+// reset defult state 
 void game::KeyReset(){
 left.vy = 0;
 right.vy = 0;
 }
-
+  // game controllers 
 void game::KeyControl(){
-	if((left.Up)&&(!left.Down))left.vy = PSpeedY;
-	if((!left.Up)&&(left.Down))left.vy = -PSpeedY;
-	if((right.Up)&&(!right.Down))right.vy = PSpeedY;
+	if((left.Up)&&(!left.Down))left.vy = PSpeedY;  // on  -> UP
+	if((!left.Up)&&(left.Down))left.vy = -PSpeedY;  // Bug here -_-
+	if((right.Up)&&(!right.Down))right.vy = PSpeedY; 
 	if((!right.Up)&&(right.Down))right.vy = -PSpeedY;
 }
 
@@ -102,10 +107,10 @@ left.size = 200;
 right.size = 200;
 left.x = -510;
 right.x = 510;
-while(ball.vx == 0)ball.vx = (rand()%3 - 1)*BallSpeedX;
-ball.vy = 0;
-ball.x = 0;
-ball.y = 0;
+	while(ball.vx == 0)ball.vx = (rand()%3 - 1)*BallSpeedX;
+	ball.vy = 0;
+	ball.x = 0;
+	ball.y = 0;
 }
 
 void game::win(){
@@ -135,6 +140,7 @@ void reflector::care(){
 	}
 }
 
+
 void game::DrawField(){
 	glColor3f(1,1,1);
 	glVertex2f(-FieldSizeX - BorderT,-FieldSizeY - BorderT);
@@ -156,7 +162,8 @@ void game::DrawField(){
 	glVertex2f(FieldSizeX + BorderT,-FieldSizeY - BorderT);
 	glVertex2f(FieldSizeX + BorderT,FieldSizeY + BorderT);
 	glVertex2f(FieldSizeX, FieldSizeY + BorderT);
-
+	
+	
 	for(float i = -FieldSizeY; i <= FieldSizeY; i += 4*MLineT){
 		glVertex2f(-MLineT,i + MLineT);
 		glVertex2f(MLineT,i + MLineT);
