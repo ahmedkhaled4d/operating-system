@@ -2,6 +2,10 @@
 #include <time.h>
 #include <cmath>
 
+/*  
+	Eng / Ahmed Khaled 
+	Demo C++ OpenGl game For Graphics project 
+*/
 class game{
 public:
 	int OrthoWid;
