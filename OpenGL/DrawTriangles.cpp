@@ -11,6 +11,19 @@ void drawXYCoordinatePlane(int left, int right, int bottom, int top);
 void drawGrid(int left, int right, int bottom, int top);
 
 
+int main(int argc, char** argv) {
+	glutInit(&argc, argv);
+	glutInitWindowSize(640, 480);
+	//  glutInitWindowSize(350, 350);
+	glutInitWindowPosition(10, 10);
+	glutCreateWindow("openGL");
+	glutDisplayFunc(display);
+	glutSwapBuffers();
+	glutMainLoop();
+	return 0;
+}
+
+
 void display(){
 	glClearColor(1.0, 1.0, 1.0, 0.0);
 	glClear(GL_COLOR_BUFFER_BIT);
