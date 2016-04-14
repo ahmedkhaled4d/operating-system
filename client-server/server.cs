@@ -14,7 +14,7 @@ namespace server
         {
             TcpClient client = (TcpClient)obj;
             StringBuilder sb = new StringBuilder();
- 
+            // comment streaming here
             using (NetworkStream stream = client.GetStream())
             {
                 int i;
