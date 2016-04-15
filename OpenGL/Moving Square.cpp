@@ -24,7 +24,10 @@ int main(int argc, char **argv)
 	glutInitWindowSize(300, 300);
 	glutCreateWindow("Moving square");
 
-//
+	glClearColor(0.0, 0.0, 0.0, 0.0);         // black background 
+	glMatrixMode(GL_PROJECTION);              // setup viewing projection 
+	glLoadIdentity();                           // start with identity matrix 
+	glOrtho(0.0, 10.0, 0.0, 10.0, -1.0, 1.0);   // setup a 10x10x2 viewing world
 
 	glutDisplayFunc(display);
 	glutMainLoop();
