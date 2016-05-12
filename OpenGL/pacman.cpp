@@ -135,17 +135,7 @@ void FindPath(int sx, int sy, int x, int y){
 		AddArray(BFSArray[i].x, BFSArray[i].y + 1, BFSArray[i].walk_count + 1, i);
 		AddArray(BFSArray[i].x, BFSArray[i].y - 1, BFSArray[i].walk_count + 1, i);
 
-		/*
-		AddArray( BFSArray[i].x+1, BFSArray[i].y+1, BFSArray[i].walk_count+1, i );
-		AddArray( BFSArray[i].x-1, BFSArray[i].y+1, BFSArray[i].walk_count+1, i );
-		AddArray( BFSArray[i].x+1, BFSArray[i].y+1, BFSArray[i].walk_count+1, i );
-		AddArray( BFSArray[i].x+1, BFSArray[i].y-1, BFSArray[i].walk_count+1, i );
-
-		AddArray( BFSArray[i].x+1, BFSArray[i].y-1, BFSArray[i].walk_count+1, i );
-		AddArray( BFSArray[i].x-1, BFSArray[i].y-1, BFSArray[i].walk_count+1, i );
-		AddArray( BFSArray[i].x-1, BFSArray[i].y+1, BFSArray[i].walk_count+1, i );
-		AddArray( BFSArray[i].x-1, BFSArray[i].y-1, BFSArray[i].walk_count+1, i );
-		*/
+	 	// increament counter to get BFSArray's size
 		i++;
 	}
 
@@ -155,6 +145,7 @@ void FindPath(int sx, int sy, int x, int y){
 
 int main()
 {
+	// start hero
 	bool running = true;
 	int x = 15; // hero x
 	int y = 16; // hero y
@@ -246,7 +237,7 @@ int main()
 		frame++;
 	}
 
-	system("cls");
+	system("cls");  
 	printf("You Lose and your score is : %i", pts);
 	cin.get();
 	cin.get();
