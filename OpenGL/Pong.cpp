@@ -11,6 +11,12 @@ public:
 // declare vars 
 	int OrthoWid;
 	int OrthoHei;
+	int ScoreL;
+	int ScoreR;
+	float TextPosX;
+	float TextPosY;
+	float BallSpeedX;
+	float PSpeedY;
 	int WinWid;
 	int WinHei;
 	int winXPos;
@@ -22,12 +28,6 @@ public:
 	float BallSize;
 	float BorderT;
 	float MLineT;
-	int ScoreL;
-	int ScoreR;
-	float TextPosX;
-	float TextPosY;
-	float BallSpeedX;
-	float PSpeedY;
 	game(){
 		// init vars
 		WinWid = 700;
@@ -129,7 +129,7 @@ void game::win(){
 		ScoreL++;
 	}
 }
-
+// debug this function 
 void reflector::care(){
 	if(hold){
 		ball.vx = 0;
